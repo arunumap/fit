@@ -12,6 +12,46 @@
   </head>
 
   <body>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href=<% link_to root_url %>>My Site</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <% if current_user %>
+      <section class="top-bar-section">
+      <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a href="#">Right Nav Button Active</a></li>
+          <li class="has-dropdown">
+            <%= link_to current_user.full_name, user_path(current_user.id) %>
+            <ul class="dropdown">
+              <li><%= link_to "Sign Out", signout_path %></li>
+              <li><%= link_to "My Profile", user_path(current_user.id) %></li>
+            </ul>
+          </li>
+        </ul>
+    <!-- Left Nav Section -->
+      </section>
+      <% else %>
+      <section class="top-bar-section">
+      <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a href="#">Right Nav Button Active</a></li>
+          <li class="has-dropdown">
+            <a href="#">Sign In</a>
+            <ul class="dropdown">
+              <li><%= link_to "Sign in with Fitbit", "/auth/fitbit"%></li>
+            </ul>
+          </li>
+        </ul>
+    <!-- Left Nav Section -->
+      </section>
+      <% end %>
+</nav>
+
+
           <% if current_user %>
             <li class="nav-text"><a href="#">Welcome back <%= current_user.full_name %>!  </a></li>
             <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
