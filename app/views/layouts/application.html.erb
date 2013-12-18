@@ -51,14 +51,6 @@
       <% end %>
 </nav>
 
-
-          <% if current_user %>
-            <li class="nav-text"><a href="#">Welcome back <%= current_user.full_name %>!  </a></li>
-            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-          <% else %>
-            <li><%= link_to "Sign in with Fitbit", "/auth/fitbit", id: "sign_in" %></li>
-          <% end %>
-
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

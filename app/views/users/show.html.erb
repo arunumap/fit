@@ -1,3 +1,13 @@
 <%= @user.full_name %>
-<%= @measurement.active_score %>
-<%= @measurement.steps_taken %>
+Activity Score: <%= @measurement.active_score %>
+Steps Taken: <%= @measurement.steps_taken %>
+what is this?: <%= @measurement.calories_bmr %>
+calories out: <%= @measurement.calories_out %>
+
+
+<!-- <div class="progress_container"><div class="progressbar"></div></div> -->
+
+
+<div class="progress" style="width: 200px;">
+  <span class="meter" style="width: <%=@steps%>%"></span>
+</div>
