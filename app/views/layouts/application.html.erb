@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+          <% if current_user %>
+            <li class="nav-text"><a href="#">Welcome back <%= current_user.full_name %>!  </a></li>
+            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <% else %>
+            <li><%= link_to "Sign in with Fitbit", "/auth/fitbit", id: "sign_in" %></li>
+          <% end %>
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
