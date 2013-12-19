@@ -47,6 +47,8 @@ gem 'fitbit'
 
 gem 'pry-rails'
 
+gem 'omniauth-identity'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -57,6 +59,7 @@ group :test do
 	gem 'faker'
 	gem 'guard-rspec'
 	gem 'launchy'
+	gem 'shoulda-matchers'
 end
 
 group :development, :test do
@@ -69,7 +72,7 @@ group :development do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'

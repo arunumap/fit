@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: fit_test
   pool: 5
-  # username: postgres
+  username: postgres
   password: postgres
   host: localhost
 

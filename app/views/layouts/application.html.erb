@@ -34,8 +34,22 @@
         </ul>
     <!-- Left Nav Section -->
       </section>
-      <% else %>
+      <% elsif current_admin_user %>
       <section class="top-bar-section">
+      <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a href="#">Right Nav Button Active</a></li>
+          <li class="has-dropdown">
+            <a href="#"><%= current_admin_user.name%></a>
+            <ul class="dropdown">
+              <li><%= link_to "Sign Out", signout_path %></li>
+            </ul>
+          </li>
+        </ul>
+    <!-- Left Nav Section -->
+      </section>
+      <% else %>
+        <section class="top-bar-section">
       <!-- Right Nav Section -->
         <ul class="right">
           <li class="active"><a href="#">Right Nav Button Active</a></li>
@@ -43,6 +57,7 @@
             <a href="#">Sign In</a>
             <ul class="dropdown">
               <li><%= link_to "Sign in with Fitbit", "/auth/fitbit"%></li>
+              <li><%= link_to "Admin sign in", "/auth/identity" %></li>
             </ul>
           </li>
         </ul>
