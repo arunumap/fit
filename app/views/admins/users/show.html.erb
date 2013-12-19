@@ -12,8 +12,22 @@
 		<div class="progress">
   		<span class="meter" style="width: <%=@distance%>%"></span>
 		</div></li>
-	<li><h1><%= @measurement.calories_out %></h1>
+	<li><h1><img src="http://www.epca.co.uk/wp-content/uploads/2011/03/FIRE_ICON.jpg" width="75"/><%= @measurement.calories_out %></h1>
 		<div class="progress">
   		<span class="meter" style="width: <%=@calories%>%"></span>
 		</div></li>
 </ul>
+<p>calories bmr: <%= @measurement.calories_bmr %></p>
+<p>tracker distance: <%= @measurement.distances_tracker_distance %></p>
+<p>logged distance: <%= @measurement.distances_logged_distance %></p>
+<p>very active distance: <%= @measurement.distances_veryactive_distance %></p>
+<p>moderate active distance: <%= @measurement.distances_moderateactive_distance %></p>
+<p>lightly active distance: <%= @measurement.distances_lightlyactive_distance %></p>
+<p>sedentary distance: <%= @measurement.distances_sedentaryactive_distance %></p>
+<p>fairly active min: <%= @measurement.fairly_active_min %></p>
+<p>lightly active min: <%= @measurement.lightly_active_min %></p>
+<p>marginal calories: <%= @measurement.marginal_calories %></p>
+<p>sedentary min: <%= @measurement.sedentary_min %></p>
+<p>battery: <%= @measurement.device_battery %></p>
+<%= @measurement.analyze_activity %>
+

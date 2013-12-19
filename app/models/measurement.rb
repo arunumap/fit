@@ -66,7 +66,13 @@ class Measurement < ActiveRecord::Base
 		end
 	end
 
-	private
+	def analyze_activity
+		sedentary = self.sedentary_min.to_i
+		fairly = self.fairly_active_min.to_i
+		lightly = self.lightly_active_min.to_i
+		active = self.veryActive_min.to_i
+
+	end
 
 	def fbit_attributes
 
