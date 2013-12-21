@@ -40,6 +40,7 @@ class Measurement < ActiveRecord::Base
 												 distance_goal: activities["goals"]["distance"],
 												 steps_goal: activities["goals"]["steps"])
 		else
+			binding.pry
 			measurement.update_attributes(
 												 active_score: activities["summary"]["activeScore"],
 												 calories_bmr: activities["summary"]["caloriesBMR"],
@@ -64,18 +65,6 @@ class Measurement < ActiveRecord::Base
 												 distance_goal: activities["goals"]["distance"],
 												 steps_goal: activities["goals"]["steps"])
 		end
-	end
-
-	def analyze_activity
-		sedentary = self.sedentary_min.to_i
-		fairly = self.fairly_active_min.to_i
-		lightly = self.lightly_active_min.to_i
-		active = self.veryActive_min.to_i
-
-	end
-
-	def fbit_attributes
-
 	end
 
 
