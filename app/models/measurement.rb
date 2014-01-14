@@ -40,7 +40,6 @@ class Measurement < ActiveRecord::Base
 												 distance_goal: activities["goals"]["distance"],
 												 steps_goal: activities["goals"]["steps"])
 		else
-			binding.pry
 			measurement.update_attributes(
 												 active_score: activities["summary"]["activeScore"],
 												 calories_bmr: activities["summary"]["caloriesBMR"],

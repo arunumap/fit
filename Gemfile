@@ -49,6 +49,8 @@ gem 'pry-rails'
 
 gem 'omniauth-identity'
 
+gem 'simplecov'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

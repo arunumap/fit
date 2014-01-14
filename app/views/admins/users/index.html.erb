@@ -2,6 +2,13 @@
 
 <% @all_user.each do |user| %>
 	<ul>
-		<li><%= link_to user.full_name, admins_user_path(user.id)%></li>
+		<li><%= link_to user.full_name, admins_user_path(user.id)%><%= button_to "My Patient", admins_users_path, method: "POST"%></li>
 	</ul>
 	<% end %>
+
+<h3>My Patients</h3>
+<% @my_users.each do |user| %>
+<ul>
+	<li><%= link_to user.full_name, admins_user_path(user.id)%></li>
+</ul>
+<% end %>
